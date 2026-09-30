@@ -1,69 +1,71 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import { CopyEmail } from "./copy-email";
+import { Mark } from "./mark";
+
+const EMAIL = "contact@madepossible.ca";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
+    <main>
+      <section className="hero">
+        <header className="header">
+          <Link className="wordmark" href="/" aria-label="MadePossible home">
+            <Mark />
+            <span>MadePossible</span>
+          </Link>
+          <a className="headerLink" href={`mailto:${EMAIL}`}>
+            <span className="long">{EMAIL}</span>
+            <span className="short">Email us</span>
+          </a>
+        </header>
+
+        <div className="fit">
+          <h1 className="headline">
+            <span className="srOnly">Made possible.</span>
+            <span className="mask" aria-hidden="true">
+              <span className="made">Made</span>
+            </span>
+            <span className="mask" aria-hidden="true">
+              <span className="rise">
+                {/* "Im" is laser-cut away on load, and "possible." widens to reclaim its space. */}
+                <span className="im">
+                  <span className="imGhost">Im</span>
+                  <span className="imTop">Im</span>
+                  <span className="imBottom">Im</span>
+                  <span className="laser" />
+                </span>
+                <span className="possible">possible.</span>
+              </span>
+            </span>
           </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+          <div className="aside">
+            <p>A technology company turning hard ideas into working products.</p>
+            <a className="button" href={`mailto:${EMAIL}`}>
+              Email us
+            </a>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="contact" id="contact" aria-labelledby="contact-title">
+        <div className="contactIntro">
+          <h2 id="contact-title">Have something that sounds impossible?</h2>
+          <p>Tell us what you want to build.</p>
         </div>
-      </main>
-    </div>
+
+        <div className="contactFit">
+          <a className="email" href={`mailto:${EMAIL}`}>
+            {EMAIL}
+          </a>
+          <CopyEmail email={EMAIL} />
+        </div>
+
+        <footer className="footer">
+          <Mark />
+          <span>© {new Date().getFullYear()} MadePossible</span>
+        </footer>
+      </section>
+    </main>
   );
 }
