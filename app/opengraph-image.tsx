@@ -22,8 +22,8 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 64,
-          background: "#2b34ff",
-          color: "#f4f5ff",
+          background: "#000",
+          color: "#fff",
         }}
       >
         <div
@@ -34,10 +34,10 @@ export default async function OpengraphImage() {
             fontFamily: "Archivo",
             fontWeight: 500,
             fontSize: 28,
-            color: "#cdd1ff",
+            color: "#a3a3a3",
           }}
         >
-          <span style={{ color: "#f4f5ff" }}>MadePossible</span>
+          <span style={{ color: "#fff" }}>MadePossible</span>
           <span>contact@madepossible.ca</span>
         </div>
         <div

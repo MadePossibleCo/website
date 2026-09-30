@@ -1,8 +1,8 @@
 :root {
-  --cobalt: #2b34ff;
-  --paper: #f4f5ff;
-  --ink: #0a0e4a;
-  --haze: #cdd1ff;
+  --black: #000;
+  --white: #fff;
+  --muted: #525252;
+  --dim: #a3a3a3;
 
   --gutter: clamp(16px, 4vw, 56px);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -16,15 +16,15 @@
 }
 
 html {
-  background: var(--cobalt);
+  background: var(--black);
   color-scheme: light;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background: var(--cobalt);
-  color: var(--paper);
+  background: var(--black);
+  color: var(--white);
   font-family: var(--font-archivo), system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.45;
@@ -34,8 +34,8 @@ body {
 }
 
 ::selection {
-  background: var(--paper);
-  color: var(--cobalt);
+  background: var(--white);
+  color: var(--black);
 }
 
 a {
@@ -94,7 +94,7 @@ a {
 .headerLink {
   font-size: 15px;
   font-weight: 500;
-  color: var(--haze);
+  color: var(--dim);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.3em;
@@ -102,7 +102,7 @@ a {
 }
 
 .headerLink:hover {
-  color: var(--paper);
+  color: var(--white);
 }
 
 .headerLink .short {
@@ -215,7 +215,7 @@ a {
   background: #fff;
   box-shadow:
     0 0 6px #fff,
-    0 0 18px 2px rgba(205, 209, 255, 0.9);
+    0 0 18px 2px rgba(255, 255, 255, 0.6);
   transform-origin: left center;
   opacity: 0;
   animation: laser 700ms linear 850ms both;
@@ -245,7 +245,7 @@ a {
   max-width: 28ch;
   font-size: clamp(17px, 1.35vw, 22px);
   line-height: 1.35;
-  color: var(--haze);
+  color: var(--dim);
   text-wrap: pretty;
 }
 
@@ -262,8 +262,8 @@ a {
   align-items: center;
   height: 48px;
   padding: 0 22px;
-  background: var(--paper);
-  color: var(--cobalt);
+  background: var(--white);
+  color: var(--black);
   font-size: 16px;
   font-weight: 700;
   font-variation-settings: "wdth" 110;
@@ -274,7 +274,7 @@ a {
 }
 
 .button:hover {
-  background: #fff;
+  background: #e5e5e5;
 }
 
 .button:active {
@@ -282,20 +282,20 @@ a {
 }
 
 .hero :focus-visible {
-  outline-color: var(--paper);
+  outline-color: var(--white);
 }
 
 /* ---------- Contact ---------- */
 
 .contact {
   padding: clamp(56px, 9vw, 120px) var(--gutter) 24px;
-  background: var(--paper);
-  color: var(--cobalt);
+  background: var(--white);
+  color: var(--black);
 }
 
 .contact ::selection {
-  background: var(--cobalt);
-  color: var(--paper);
+  background: var(--black);
+  color: var(--white);
 }
 
 .contactIntro h2 {
@@ -312,7 +312,7 @@ a {
 .contactIntro p {
   margin: 20px 0 0;
   font-size: clamp(17px, 1.35vw, 22px);
-  color: var(--ink);
+  color: var(--muted);
 }
 
 .contactFit {
@@ -353,10 +353,10 @@ a {
   min-width: 148px;
   height: 48px;
   padding: 0 22px;
-  border: 1.5px solid var(--cobalt);
+  border: 1.5px solid var(--black);
   border-radius: 0;
   background: transparent;
-  color: var(--cobalt);
+  color: var(--black);
   font: inherit;
   font-size: 16px;
   font-weight: 700;
@@ -369,7 +369,7 @@ a {
 }
 
 .copy:hover {
-  background: rgba(43, 52, 255, 0.08);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .copy:active {
@@ -377,8 +377,8 @@ a {
 }
 
 .copy[data-copied] {
-  background: var(--cobalt);
-  color: var(--paper);
+  background: var(--black);
+  color: var(--white);
 }
 
 .footer {
@@ -386,13 +386,13 @@ a {
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  color: var(--ink);
+  color: var(--muted);
 }
 
 .footer .mark {
   width: 14px;
   height: 14px;
-  color: var(--cobalt);
+  color: var(--black);
 }
 
 @media (max-width: 480px) {

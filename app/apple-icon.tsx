@@ -10,7 +10,7 @@ export default function AppleIcon() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#2b34ff",
+          background: "#000",
           position: "relative",
           display: "flex",
         }}
@@ -22,7 +22,7 @@ export default function AppleIcon() {
             top: 34,
             width: 93,
             height: 52,
-            background: "#f4f5ff",
+            background: "#fff",
           }}
         />
         <div
@@ -32,7 +32,7 @@ export default function AppleIcon() {
             top: 94,
             width: 93,
             height: 52,
-            background: "#f4f5ff",
+            background: "#fff",
           }}
         />
       </div>
