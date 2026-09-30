@@ -13,6 +13,7 @@ const description =
   "MadePossible is a technology company that turns hard ideas into working products. Get in touch at contact@madepossible.ca.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://madepossible.ca"),
   title: "MadePossible",
   description,
   openGraph: {
