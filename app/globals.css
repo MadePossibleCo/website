@@ -65,6 +65,7 @@ a {
 /* ---------- Hero ---------- */
 
 .hero {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   min-height: 100svh;
@@ -109,11 +110,43 @@ a {
   display: none;
 }
 
+/*
+ * The mark sits in the same right-hand column as the aside (left: 62%),
+ * filling whatever height the headline leaves free.
+ */
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 32px 0 0 62%;
+}
+
+.heroMark {
+  --h: clamp(96px, min(34svh, 52vw), 340px);
+  height: var(--h);
+  width: calc(var(--h) * 1.0633);
+  overflow: visible;
+}
+
+.heroMark .markTop {
+  animation: lockTop 750ms var(--ease-cut) 1500ms both;
+}
+
+.heroMark .markBottom {
+  animation: lockBottom 750ms var(--ease-cut) 1500ms both;
+}
+
+@container (max-width: 1080px) {
+  .stage {
+    padding-left: 0;
+  }
+}
+
 .fit {
+  --pad: 56px;
   container-type: inline-size;
   position: relative;
-  margin-top: auto;
-  padding-top: 96px;
+  padding-top: var(--pad);
 }
 
 /*
@@ -228,7 +261,7 @@ a {
 
 .aside {
   position: absolute;
-  top: 96px;
+  top: var(--pad);
   right: 0;
   left: 62%;
   height: calc(var(--fs) * 0.735);
@@ -390,8 +423,6 @@ a {
 }
 
 .footer .mark {
-  width: 14px;
-  height: 14px;
   color: var(--black);
 }
 
@@ -464,6 +495,35 @@ a {
   100% {
     opacity: 1;
     transform: translate(0.035em, 100%);
+  }
+}
+
+@keyframes lockTop {
+  0% {
+    opacity: 0;
+    /* 50 mark units along the 60° arms (px are viewBox units here). */
+    transform: translate(25px, -43.3px);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes lockBottom {
+  0% {
+    opacity: 0;
+    transform: translate(-25px, 43.3px);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }
 

@@ -10,7 +10,7 @@ export default function Home() {
       <section className="hero">
         <header className="header">
           <Link className="wordmark" href="/" aria-label="MadePossible home">
-            <Mark />
+            <Mark size={22} />
             <span>MadePossible</span>
           </Link>
           <a className="headerLink" href={`mailto:${EMAIL}`}>
@@ -18,6 +18,11 @@ export default function Home() {
             <span className="short">Email us</span>
           </a>
         </header>
+
+        {/* The two halves slide in along their straight arms and lock as "IM" is cut away. */}
+        <div className="stage">
+          <Mark className="heroMark" />
+        </div>
 
         <div className="fit">
           <h1 className="headline">
@@ -62,7 +67,7 @@ export default function Home() {
         </div>
 
         <footer className="footer">
-          <Mark />
+          <Mark size={16} />
           <span>© {new Date().getFullYear()} MadePossible</span>
         </footer>
       </section>

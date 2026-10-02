@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { MARK_BOTTOM, MARK_TOP, MARK_VIEWBOX } from "./mark";
 
 export const alt = "MadePossible";
 export const size = { width: 1200, height: 630 };
@@ -30,14 +31,17 @@ export default async function OpengraphImage() {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "flex-start",
             fontFamily: "Archivo",
             fontWeight: 500,
             fontSize: 28,
             color: "#a3a3a3",
           }}
         >
-          <span style={{ color: "#fff" }}>MadePossible</span>
+          <svg width={181} height={170} viewBox={MARK_VIEWBOX}>
+            <path d={MARK_TOP} fill="#fff" />
+            <path d={MARK_BOTTOM} fill="#fff" />
+          </svg>
           <span>contact@madepossible.ca</span>
         </div>
         <div
